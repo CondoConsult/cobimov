@@ -27,7 +27,7 @@
         <h2>RPA</h2>
           <a href="rpa_relatorios">Relatórios</a><br>
           <a href="rpa_maquinas">Máquinas</a><br>
-          <a href="rpa_avisos_whatsapp.php">Avisos WhatsApp</a>
+          <a href="rpa_avisos_whatsapp">Avisos WhatsApp</a>
         </div>
         
         <?php 

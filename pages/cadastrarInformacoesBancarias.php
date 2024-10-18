@@ -1,4 +1,8 @@
-<?php include_once '../public/partials/header.php';?>
+<?php include_once '../public/partials/header.php';
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+?>
 
   <main>
     <div class="wrapper">
@@ -17,12 +21,12 @@
             </select><br>
 
             <div id="ted-doc">
-            <?php require_once '../src/selects/bancos.php'?><br>
-            <label>Agência sem digito</label><br>
-            <input type="number" name="agencia" required><br>
-            <label for="" id="conta-label">Número da conta</label><br>
-            <input type="number" name="conta-numero" id="conta" placeholder="-" required>
-            <input type="number" name="conta-digito" id="digito-conta" placeholder="digito" required><br>
+             <?php require_once '../src/selects/bancos.php'?><br>
+             <label>Agência sem digito</label><br>
+             <input type="number" name="agencia"><br>
+             <label for="" id="conta-label">Número da conta</label><br>
+             <input type="number" name="conta-numero" id="conta" placeholder="-">
+             <input type="number" name="conta-digito" id="digito-conta" placeholder="digito"><br>
             </div>
 
             <div id="pix">
@@ -34,7 +38,7 @@
                 <option value="Chave">Chave</option>
               </select><br>
               <label>Chave</label><br>
-              <input type="chave" name="chave-pix">
+              <input type="text" name="chave-pix">
             </div>
 
             <label>Tipo de conta</label><br>
@@ -60,9 +64,9 @@
         </div>
       </form>
     </div>
-  </main>
+    </main>
 
   <script src="../js/cadastrarInformacoesBancarias.js"></script>
-
+  
 </body>
 </html>

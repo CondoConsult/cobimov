@@ -59,6 +59,17 @@ button:hover {
     padding: 10% 0% 3% 0%;
 }
 
+.pagination {
+    margin: 40px 0 40px 0;
+}
+
+.pagination a {
+    background-color:   var(--color-background-secondary);
+    margin: 0 10px 0 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 /* Navbar */
 
 .home-link {
