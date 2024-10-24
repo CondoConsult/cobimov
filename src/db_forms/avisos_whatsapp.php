@@ -21,12 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 function insert($pdo) {
     try {
         $telefone = $_POST['numero-telefone'];
+        $condominioID = $_POST['condominio'];
         $nomeContato = $_POST['nome-contato'];
 
-        $query = "INSERT INTO rpa_avisos_whatsapp (telefone, nome_contato)
-        VALUES (:telefone, :nomecontato);";
+        $query = "INSERT INTO rpa_avisos_whatsapp (telefone, condominio_id, nome_contato)
+        VALUES (:telefone, :condominioid, :nomecontato);";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam('telefone', $telefone);
+        $stmt->bindParam('condominioid', $condominioID);
         $stmt->bindParam('nomecontato', $nomeContato);
 
         if (!$stmt->execute()) {

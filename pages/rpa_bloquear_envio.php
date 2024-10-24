@@ -2,18 +2,10 @@
 include_once '../public/partials/header.php';
 include_once '../src/db_functions/select.php';
 
-$recordsPerPage = 8;
-$totalRecordsQuery = "SELECT COUNT(*) as total FROM rpa_avisos_whatsapp;";
-$totalRecordsResult = selectData($totalRecordsQuery);
-$totalRecords = $totalRecordsResult[0]['total'];
-$totalPages = ceil($totalRecords / $recordsPerPage);
-
-$currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$currentPage = max(1, min($totalPages, $currentPage));
-
-$startRecord = ($currentPage - 1) * $recordsPerPage;
-
-$query = "SELECT * FROM rpa_avisos_whatsapp LIMIT $startRecord, $recordsPerPage;";
+$query = "SELECT rpa_avisos_whatsapp.*, CondName FROM rpa_avisos_whatsapp
+          LEFT JOIN Condominios 
+          ON Condominios.CondID = rpa_avisos_whatsapp.condominio_id
+          ORDER BY CondName ASC;";
 $result = selectData($query);
 ?>
 
@@ -24,6 +16,7 @@ $result = selectData($query);
     <form action="../src/db_forms/avisos_whatsapp.php" method="POST">
         <label>Telefone</label><br>
         <input type="tel" name="numero-telefone" placeholder="41999999999" required><br>
+        <?php require_once '../src/selects/condominios.php'; ?><br>
         <label>Nome Contato</label><br>
         <input type="text" name="nome-contato" required><br>
         <button class="btn primary" name="button" value="insert">Adicionar</button>
@@ -34,12 +27,14 @@ $result = selectData($query);
             <tr>
                 <th>Telefone</th>
                 <th>Nome Contato</th>
+                <th>Condominio</th>
                 <th></th>
             </tr>
 
     <?php 
     foreach ($result as $row) {
         $telefone = htmlspecialchars($row['telefone']);
+        $condominio = htmlspecialchars($row['CondName']);
         $nomeContato = htmlspecialchars($row['nome_contato']);
         ?>
         
@@ -48,6 +43,7 @@ $result = selectData($query);
 
             <td><?php echo $telefone;?></td>
             <td><?php echo $nomeContato;?></td>
+            <td><?php echo $condominio;?></td>
 
             <td>
               <input value="<?php echo $telefone ?>" name="numero-telefone" hidden>
@@ -60,23 +56,6 @@ $result = selectData($query);
     <?php } ?>
       </tr>
     </table>
-    </div>
-
-    <!-- Pages -->
-    <div class="pagination">
-        <?php if ($currentPage > 1): ?>
-            <a href="?page=<?php echo $currentPage - 1; ?>">« </a>
-        <?php endif; ?>
-
-        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-            <a href="?page=<?php echo $i; ?>" class="<?php echo $i === $currentPage ? 'active' : ''; ?>">
-                <?php echo $i; ?>
-            </a>
-        <?php endfor; ?>
-
-        <?php if ($currentPage < $totalPages): ?>
-            <a href="?page=<?php echo $currentPage + 1; ?>">» </a>
-        <?php endif; ?>
     </div>
 
     <div class="buttons-container">
