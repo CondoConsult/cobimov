@@ -35,15 +35,16 @@ function insertData($pdo) {
       $responsavel = $_POST['responsavel'];  
       $nomeProprietario = $_POST['nome-proprietario']; 
       $descricao = $_POST['descricao'];
+      $opcoesLancamento = $_POST['opcoes-lancamento'];
 
       $query = "INSERT INTO LancamentosCJudiciais 
           (CondID, Unidade, Classe, Valor, DataPagamento, LinhaDigitavel, 
           Responsavel, NomeProprietario, Descricao, Etapa, EtapaContasPagar,
-          EtapaContasReceber, EtapaBB)
+          EtapaContasReceber, EtapaBB, opcoes_lancamento)
           VALUES 
           (:condominio, :unidade, :classe, :valor, :datapagamento,
           :linhadigitavel, :responsavel, :nomeproprietario, :descricao,
-          'pendente', 'pendente', 'pendente', 'pendente');";
+          'pendente', 'pendente', 'pendente', 'pendente', :opcoeslancamento);";
 
       $stmt = $pdo->prepare($query);
       $stmt->bindParam(":condominio", $condominio);
@@ -55,6 +56,7 @@ function insertData($pdo) {
       $stmt->bindParam(":responsavel", $responsavel);
       $stmt->bindParam(":nomeproprietario", $nomeProprietario);
       $stmt->bindParam(":descricao", $descricao);
+      $stmt->bindParam(":opcoeslancamento", $opcoesLancamento);
       
       if ($stmt->execute()) {
           include_once '../../public/partials/messages.php';
@@ -80,6 +82,7 @@ function updateData($pdo) {
     $dataPagamento = $_POST["data-pagamento"];
     $responsavel = $_POST["responsavel"];
     $descricao = $_POST["descricao"];
+    $opcoesLancamento = $_POST['opcoes-lancamento'];
 
     $query = "UPDATE LancamentosCJudiciais
               SET 
@@ -89,7 +92,8 @@ function updateData($pdo) {
               Responsavel = :responsavel,
               NomeProprietario = :nomeproprietario,
               Descricao = :descricao,
-              Unidade = :unidade
+              Unidade = :unidade,
+              opcoes_lancamento = :opcoeslancamento
               WHERE CustaID = :custaid;";
 
     $stmt = $pdo->prepare($query);
@@ -101,6 +105,7 @@ function updateData($pdo) {
     $stmt->bindParam(":responsavel", $responsavel);
     $stmt->bindParam(":nomeproprietario", $nomeProprietario);
     $stmt->bindParam(":descricao", $descricao);
+    $stmt->bindParam(":opcoeslancamento", $opcoesLancamento);
     $stmt->execute();
 
     if ($stmt->execute()) {

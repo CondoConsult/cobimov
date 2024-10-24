@@ -18,7 +18,7 @@ $result = selectData($query);
 ?>
 
 <div class="wrapper">
-    <h1>Bloquear Envios Avisos WhatsApp</h1>
+    <h1>Bloquear Envio Avisos WhatsApp</h1>
     <p>Informe o numero ou cliente que deseja remover da lista de envio de mensagens.</p>
 
     <form action="../src/db_forms/avisos_whatsapp.php" method="POST">

@@ -2,6 +2,8 @@
 
   <div class="wrapper">
 
+   <h1>Editar Custa Judicial</h1>
+
     <?php
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -22,6 +24,7 @@
               $responsavel = htmlspecialchars($row["Responsavel"]);
               $nomeProprietario = htmlspecialchars($row["NomeProprietario"]);
               $descricao = htmlspecialchars($row["Descricao"]);
+              $opcoesLancamento = htmlspecialchars($row["opcoes_lancamento"]);
             }
 
         } catch (PDOException $error) {
@@ -56,12 +59,19 @@
 
            <label for="responsavel">Responsável</label><br>
            <select name="responsavel">
-             <option value="Condo Consult">Condo Consult</option>
+            <option value="Condo Consult">Condo Consult</option>
             <!-- <option value="Azevedo, Paste e Surkamp">Azevedo, Paste e Surkamp</option> -->
            </select><br>
 
            <label for="descricao">Descrição</label><br>
-           <input name="descricao" type="text" value="<?php echo $descricao ?>" required>
+           <input name="descricao" type="text" value="<?php echo $descricao ?>" required><br>
+
+           <label for="opcoes-lancamento">Opções Lançamento</label><br>
+           <select name="opcoes-lancamento">
+            <option value="Todos" <?php echo (trim($opcoesLancamento) === 'Todos') ? 'selected' : ''; ?>>C21 + Banco</option>
+            <option value="C21" <?php echo (trim($opcoesLancamento) === 'C21') ? 'selected' : ''; ?>>C21</option>
+            <option value="Banco" <?php echo (trim($opcoesLancamento) === 'Banco') ? 'selected' : ''; ?>>Banco</option>
+           </select>
 
          </div>
        </div>

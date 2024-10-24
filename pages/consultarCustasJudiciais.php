@@ -47,6 +47,7 @@
                         <th>Pagamento</th>
                         <th>Classe</th>
                         <th>Descrição</th>
+                        <th>Opções Lançamento</th>
                         <th>Linha Digitável</th>
                         <th>Valor</th>
                         <th></th>
@@ -64,6 +65,7 @@
                 echo "<td>" . date('d/m/Y', strtotime($row['DataPagamento'])) . "</td>";
                 echo "<td>" . htmlspecialchars($row["Classe"]) . "</td>";
                 echo "<td>" . htmlspecialchars($row["Descricao"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["opcoes_lancamento"]) . "</td>";
                 echo "<td>" . htmlspecialchars($row["LinhaDigitavel"]) . "</td>";
                 echo "<td>" . number_format($row["Valor"], 2, ',', '.') . "</td>";
 

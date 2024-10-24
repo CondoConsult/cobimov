@@ -3,11 +3,6 @@
   <main>
     <div class="wrapper">
       <h1>Custas Judiciais Novo Lançamento</h1>
-      <p>O que será lançado?</p>
-      <ul>
-        <li>Contas a pagar</li>
-        <li>Contas a receber</li>
-      </ul>
 
       <?php 
       
@@ -54,6 +49,13 @@
 
               <label for="nome-proprietario">Nome do Proprietário</label><br>
               <input type="text" name="nome-proprietario"><br>
+
+              <label for="opcoes-lancamento">Opções de Lançamento</label><br>
+              <select name="opcoes-lancamento">
+                <option value="Todos">C21 + banco</option>
+                <option value="C21">C21</option>
+                <option value="Banco">Banco</option>
+              </select>
             
             </div>
 
