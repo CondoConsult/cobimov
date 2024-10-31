@@ -2,7 +2,6 @@
 include_once '../public/partials/header.php';
 include_once '../src/db_functions/select.php';
 
-
 $currentDay = date('d');
 $currentDate = date('m/Y');
 
@@ -20,17 +19,33 @@ if ($currentDay > 20) {
         <form action="../src/db_forms/remessa.php" method="POST">
           <?php require_once '../src/selects/condominios_multi.php';?><br>
           <label>Mes de Referência</label><br>
-          <input type="text" name="mes-referencia" required value="<?php echo $currentDate ?>"><br>
+          <input type="text" name="mes-referencia" required value="<?php echo $currentDate ?>">
             <div class="buttons-container">
               <button class="btn primary" type="submit" name="button" value="insert">Adicionar</button>
             </div>
         </form>
 
-  <?php
-  $query = 'SELECT CondName, rpa_programar_remessa.* FROM rpa_programar_remessa
-            JOIN Condominios ON rpa_programar_remessa.cond_id = Condominios.CondID ORDER BY estado DESC, id DESC;';
-  $results = selectData($query);
+        <form method="POST">
+          <select name="filter">
+            <option value="Pendente">Pendente</option>
+            <option value="Exportado">Exportado</option>
+          </select>
+          <button class="btn filter">Filtrar</button>
+        </form>
 
+  <?php
+
+  if (isset($_POST['filter'])) {
+    $filter = $_POST['filter'];
+  } else {
+    $filter = "Pendente";
+  }
+
+  $query = "SELECT CondName, rpa_programar_remessa.* FROM rpa_programar_remessa
+            JOIN Condominios ON rpa_programar_remessa.cond_id = Condominios.CondID
+            WHERE estado = '$filter'
+            ORDER BY id DESC;";
+  $results = selectData($query);
 
   echo "<div class='table-container'>
         <table class='tables'>
@@ -41,11 +56,14 @@ if ($currentDay > 20) {
           <th></th>
       </tr>";
 
+  $numberOfFiles = 0;
+  
   foreach ($results as $row) {
     $condID = $row['cond_id'];
     $condominio = $row['CondName'];
     $currentDate = $row['mes_referencia'];
     $estado = $row['estado'];
+
 
     echo "<tr>
             <td>" . $condominio . "</td>
@@ -61,6 +79,7 @@ if ($currentDay > 20) {
                           <button name='button' value='delete'><img class='processes-status-icons' src='../public/images/icons/trash.svg'></button>
                         </td>
                       </form>";
+                $numberOfFiles++;
                 break;
               case 'Exportado':
                 echo "<td><img class='processes-status-icons' src='../public/images/icons/done.svg'></td>";
@@ -71,6 +90,11 @@ if ($currentDay > 20) {
     echo "<tr>";
   }
   echo "</table></div>";
+
+  if ($filter === "Pendente") {
+    echo "Arquivos pendentes: " . $numberOfFiles;
+  }
+
   ?>
 
     <div class="buttons-container">

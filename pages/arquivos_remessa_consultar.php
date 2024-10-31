@@ -112,8 +112,8 @@
         ?>
 
         <div class="buttons-container">
-            <a href="arquivos_remessa_programar.php"><button class="btn primary" type="button">Programar</button></a>
-            <a href="arquivos_remessa.php"><button class="btn secondary" type="button">Voltar</button></a>
+            <a href="arquivos_remessa_programar"><button class="btn primary" type="button">Programar</button></a>
+            <a href="arquivos_remessa"><button class="btn secondary" type="button">Voltar</button></a>
         </div>
     </div>
 
