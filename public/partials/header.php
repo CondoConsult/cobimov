@@ -24,6 +24,7 @@ $tema = $results[0]['Tema'];
   <link rel="icon" type="image/ico" href="../public/images/favicon.ico">
   <?php echo "<link rel='stylesheet' href='../public/css/" . $tema . "_v2.css'>"; ?>
   <?php echo "<link rel='stylesheet' href='../public/css/styles_v2.css'>"; ?>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
   <title>CobImov</title>
 </head>
 <body>

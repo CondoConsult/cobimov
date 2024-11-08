@@ -29,6 +29,11 @@
           <a href="rpa_maquinas">Máquinas</a><br>
           <a href="rpa_avisos_whatsapp">Avisos WhatsApp</a>
         </div>
+
+        <div class="home-box">
+          <h2>Colaborador</h2>
+          <a href="colaborador_area">Area Colaborador</a>
+        </div>
         
         <?php 
           $query = 'SELECT * FROM Atualizacoes ORDER BY CadastradoEm DESC LIMIT 1;';

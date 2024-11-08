@@ -59,7 +59,7 @@
           </div>";
     ?>
 
-    <h2>Condomínios: <?php echo $numeroCondominios?></h2>
+    <p>Condomínios: <?php echo $numeroCondominios?></p>
 
     <div class="buttons-container">
       <a href="condominios.php"><button class="btn secondary" type="button">Voltar</button></a>

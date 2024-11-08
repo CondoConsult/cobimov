@@ -14,16 +14,7 @@ if ($currentDay > 20) {
 ?>
 
   <div class="wrapper">
-    <h1>Programar Arquivo Remessa</h1>
-      <p>Adicione condomínios na fila para exportação automática de arquivos de remessa.</p>
-        <form action="../src/db_forms/remessa.php" method="POST">
-          <?php require_once '../src/selects/condominios_multi.php';?><br>
-          <label>Mes de Referência</label><br>
-          <input type="text" name="mes-referencia" required value="<?php echo $currentDate ?>">
-            <div class="buttons-container">
-              <button class="btn primary" type="submit" name="button" value="insert">Adicionar</button>
-            </div>
-        </form>
+    <h1>Programar Arquivos Remessa</h1>
 
         <form method="POST">
           <select name="filter">
@@ -98,6 +89,7 @@ if ($currentDay > 20) {
   ?>
 
     <div class="buttons-container">
+      <a href="arquivos_remessa_programar_novo"><button class="btn primary">Programar</button></a>
       <a href="arquivos_remessa_consultar.php"><button class="btn primary" type="button">Consultar</button></a>
       <a href="arquivos_remessa.php"><button class="btn secondary" type="button">Voltar</button></a>
     </div>
