@@ -92,6 +92,12 @@ button:hover {
     gap: 20px;
 }
 
+.profile {
+   padding: 3px 15px 5px 15px;
+   background-color: #fff;
+   border-radius: 10px;
+}
+
 /* Sidebar */
 
 .side-bar {

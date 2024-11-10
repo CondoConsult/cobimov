@@ -4,17 +4,8 @@ include_once '../src/db_functions/select.php';
 ?>
 
 <div class="wrapper">
-  <div id="export-content">
 
-    <h1>Consultar Pagamentos</h1>
-
-    <form method="POST">
-      <label>Data inicial</label><br>
-      <input type="date" name="data-inicial"><br>
-      <label>Data final</label><br>
-      <input type="date" name="data-final">
-      <button class="btn filter">Filtrar</button>
-    </form>
+    <h1>Gerenciar Solicitacaos Pagamento Colaboradores</h1>
 
     <?php
 
@@ -33,8 +24,7 @@ include_once '../src/db_functions/select.php';
                 <th>Data</th> 
                 <th>Descrição</th>
                 <th>Valor</th>
-                <th>Status</th>
-                <th></th>
+                <th>Solicitante</th>
               </tr>";
 
     foreach ($results as $row) {
@@ -42,18 +32,20 @@ include_once '../src/db_functions/select.php';
         $descricao = htmlspecialchars($row['descricao']);
         $valor = htmlspecialchars($row['valor']);
         $statusPagamento = htmlspecialchars($row['status_pagamento']);
+        $solicitante = htmlspecialchars($row['solicitante']);
         $pagamentoID = htmlspecialchars($row['pagamento_id']);
 
         echo "<tr>";
         echo "<td>" . $dataSolicitacao . "</td>";
         echo "<td>" . $descricao . "</td>";
         echo "<td>" . $valor . "</td>";
+        echo "<td>" . $solicitante . "</td>";
 
         if ($statusPagamento === 'pendente') {
-          echo "<td><i class='fa-regular fa-clock'></i></td>";
           echo "<td><form action='../src/db_forms/colaborador_pagamentos' method='POST'>
                       <input value='" . $pagamentoID . "' name='pagamento-id' hidden>
-                      <button name='button' value='delete'><i class='fa-regular fa-trash-can'></i></button>
+                      <button name='button' value='update'><i class='fa-regular fa-circle-check'></i></button>
+                      <button name='button' value='update'><i class='fa-solid fa-xmark'></i></button>
                     </form>
                 </td>";
         }
@@ -63,16 +55,11 @@ include_once '../src/db_functions/select.php';
     echo "</table></div>";
     ?>
 
-  </div>
-
   <div class="buttons-container">
-    <a href="colaborador_solicitar_pagamento"><button class="btn primary">Solicitar</button></a>
-    <button class="btn primary" onclick="exportToPDF()">Exportar</button>
     <a href="colaborador_area"><button class="btn secondary" type="button">Voltar</button></a>
   </div>
 
 </div>
 
-<script src="../js/exportPDF.js"></script>
 </body>
 </html>

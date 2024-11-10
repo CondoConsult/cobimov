@@ -22,7 +22,7 @@ if ($currentDay > 20) {
           <input type="text" name="mes-referencia" required value="<?php echo $currentDate ?>">
             <div class="buttons-container">
               <button class="btn primary" type="submit" name="button" value="insert">Adicionar</button>
-              <a href="arquivos_remessa_programar.php"><button class="btn secondary" type="button">Voltar</button></a>
+              <a href="arquivos_remessa_programar"><button class="btn secondary" type="button">Voltar</button></a>
             </div>
         </form>
     </div>

@@ -32,7 +32,7 @@
 
         <div class="home-box">
           <h2>Colaborador</h2>
-          <a href="colaborador_area">Area Colaborador</a>
+          <a href="colaborador_area">Pagamentos</a>
         </div>
         
         <?php 

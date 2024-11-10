@@ -2,7 +2,7 @@
 
 <div class="wrapper">
     <h1>Gerenciar Usuários</h1>
-    
+        
     <?php
     include_once '../src/db_functions/select.php';
 

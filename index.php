@@ -13,8 +13,8 @@ if (isset($_GET['login']) && $_GET['login'] === "success") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/light_v2.css">
-    <link rel='stylesheet' href='public/css/styles_v2.css'>
+    <link rel="stylesheet" href="public/css/light_v4.css">
+    <link rel='stylesheet' href='public/css/styles_v4.css'>
     <link rel="icon" type="image/ico" href="public/images/favicon.ico">
     <script src="https://kit.fontawesome.com/e21f627216.js" crossorigin="anonymous"></script>
     <title>CobImov Acessar</title>
@@ -29,8 +29,8 @@ if (isset($_GET['login']) && $_GET['login'] === "success") {
 
             <div class="login-fields">
               <form action="includes/login.php" method="POST">
-                <input class="username" name="usuario" type="text" placeholder="Usuário" required> <br>
-                <input class="password" name="senha" type="password" placeholder="Senha" required> <br>
+                <input class="username" name="usuario" type="text" placeholder="Usuário" required><br>
+                <input class="password" name="senha" type="password" placeholder="Senha" required><br>
                 <button class="login-button" type="submit">Acessar</button>
               </form>
 

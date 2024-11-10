@@ -4,7 +4,9 @@
     <h1>Consultar Custas Judiciais</h1>
 
     <form method="POST">
-        <?php require_once '../src/selects/mes_referencia.php'; ?>
+        <label>Mes referencia</label><br>
+        <?php require_once '../src/selects/mes_referencia.php'; ?><br>
+        <label>Status</label><br>
         <select name="filter" required>
             <option value="">Selecione...</option>
             <option value="pendente">Pendente</option>
