@@ -8,7 +8,9 @@
             case 'insert':
                 insert($pdo);
                 break;
-
+            case 'update':
+                update($pdo);
+                break;
             case 'delete':
                 delete($pdo);
                 break;
@@ -64,6 +66,32 @@
             }
 
             header('Location: ../../pages/colaborador_consultar_pagamentos');
+            $pdo = null;
+            $stmt = null;
+            die();
+
+        } catch (PDOException $error) {
+            die('Query failed: ' . $error->getMessage());
+        }
+    }
+
+    function update($pdo) {
+        try {
+          
+            $pagamentoID = $_POST['pagamento-id'];
+            
+            $query = 'UPDATE colaborador_pagamentos
+                      SET status_pagamento = "aprovado"
+                      WHERE pagamento_id = :pagamentoid;';
+
+            $stmt = $pdo->prepare($query);
+            $stmt->bindParam(':pagamentoid', $pagamentoID);
+
+            if (!$stmt->execute()) {
+                echo "error";
+            }
+
+            header('Location: ../../pages/colaborador_gerenciar_pagamentos');
             $pdo = null;
             $stmt = null;
             die();

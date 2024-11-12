@@ -33,7 +33,7 @@ include_once '../src/db_functions/select.php';
                 <th>Data</th> 
                 <th>Descrição</th>
                 <th>Valor</th>
-                <th>Status</th>
+                <th>Aprovação</th>
                 <th></th>
               </tr>";
 
@@ -56,6 +56,8 @@ include_once '../src/db_functions/select.php';
                       <button name='button' value='delete'><i class='fa-regular fa-trash-can'></i></button>
                     </form>
                 </td>";
+        } else if ($statusPagamento === 'aprovado') {
+          echo "<td><i class='fa-solid fa-check'></i></td>";
         }
         echo "</tr>";
     }

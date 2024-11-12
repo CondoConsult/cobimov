@@ -5,19 +5,30 @@ include_once '../src/db_functions/select.php';
 
 <div class="wrapper">
 
-    <h1>Gerenciar Solicitacaos Pagamento Colaboradores</h1>
+    <h1>Gerenciar Solicitacoes Pagamento Colaboradores</h1>
 
     <?php
 
-    $dataInicial = isset($_POST['data-inicial']) && $_POST['data-inicial'] ? $_POST['data-inicial'] : date('Y-m-01');
-    $dataFinal = isset($_POST['data-final']) && $_POST['data-final'] ? $_POST['data-final'] : date('Y-m-d');
+    $query = "SELECT * FROM colaborador_pagamentos
+              ORDER BY data_solicitacao DESC;";
+    $requestBy = selectData($query);
 
-    echo "<h3>" . date('d/m/Y', strtotime($dataInicial)) . " a " . date('d/m/Y', STRTOTIME($dataFinal)) . "</h3>";
+    echo "<form method='POST'>
+           <select name='solicitante'>";
+
+    foreach ($requestBy as $row) {
+      $solicitante = htmlspecialchars($row['solicitante']);
+      echo "<option value='" . $solicitante . "'>" . $solicitante . "</option>";
+    }
+
+    echo "</select>
+          <button class='btn filter'>Filtrar</button>
+          </form>";
 
     $query = "SELECT * FROM colaborador_pagamentos
-              WHERE data_solicitacao BETWEEN '$dataInicial' AND '$dataFinal' ORDER BY data_solicitacao DESC;";
-    $results = selectData($query);
-
+              ORDER BY data_solicitacao DESC;";
+              $results = selectData($query);
+                  
     echo "<div class='table-container'>
             <table class='tables'>
               <tr>
@@ -25,6 +36,7 @@ include_once '../src/db_functions/select.php';
                 <th>Descrição</th>
                 <th>Valor</th>
                 <th>Solicitante</th>
+                <th>Aprovar?</th>
               </tr>";
 
     foreach ($results as $row) {
