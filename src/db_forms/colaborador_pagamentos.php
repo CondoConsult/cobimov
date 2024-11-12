@@ -8,8 +8,9 @@
             case 'insert':
                 insert($pdo);
                 break;
-            case 'update':
-                update($pdo);
+            case 'approve':
+            case 'deny':
+                update($pdo, $button);
                 break;
             case 'delete':
                 delete($pdo);
@@ -75,17 +76,24 @@
         }
     }
 
-    function update($pdo) {
+    function update($pdo, $button) {
         try {
           
             $pagamentoID = $_POST['pagamento-id'];
+
+            if ($button == 'approve') {
+                $statuspagamento = 'aprovado';
+            } elseif ($button == 'deny') {
+                $statuspagamento = 'negado';
+            }
             
             $query = 'UPDATE colaborador_pagamentos
-                      SET status_pagamento = "aprovado"
+                      SET status_pagamento = :statuspagamento
                       WHERE pagamento_id = :pagamentoid;';
 
             $stmt = $pdo->prepare($query);
             $stmt->bindParam(':pagamentoid', $pagamentoID);
+            $stmt->bindParam(':statuspagamento', $statuspagamento);
 
             if (!$stmt->execute()) {
                 echo "error";

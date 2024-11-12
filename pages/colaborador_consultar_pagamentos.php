@@ -33,7 +33,7 @@ include_once '../src/db_functions/select.php';
                 <th>Data</th> 
                 <th>Descrição</th>
                 <th>Valor</th>
-                <th>Aprovação</th>
+                <th>Status</th>
                 <th></th>
               </tr>";
 
@@ -49,15 +49,27 @@ include_once '../src/db_functions/select.php';
         echo "<td>" . $descricao . "</td>";
         echo "<td>" . $valor . "</td>";
 
-        if ($statusPagamento === 'pendente') {
-          echo "<td><i class='fa-regular fa-clock'></i></td>";
-          echo "<td><form action='../src/db_forms/colaborador_pagamentos' method='POST'>
-                      <input value='" . $pagamentoID . "' name='pagamento-id' hidden>
-                      <button name='button' value='delete'><i class='fa-regular fa-trash-can'></i></button>
-                    </form>
-                </td>";
-        } else if ($statusPagamento === 'aprovado') {
-          echo "<td><i class='fa-solid fa-check'></i></td>";
+        switch ($statusPagamento) {
+          case 'pendente':
+            echo "<td><i class='fa-regular fa-clock'></i></td>";
+            echo "<td><form action='../src/db_forms/colaborador_pagamentos' method='POST'>
+                        <input value='" . $pagamentoID . "' name='pagamento-id' hidden>
+                        <button name='button' value='delete'><i class='fa-regular fa-trash-can'></i></button>
+                      </form>
+                  </td>";
+            break;
+          
+          case 'aprovado':
+            echo "<td><i class='fa-regular fa-clock'></i><i class='fa-solid fa-robot'></i></td>";
+            break;
+
+          case 'negado':
+            echo "<td><i class='fa-solid fa-ban'></i></td>";
+            break;
+
+          case 'pago':
+            echo "<td><i class='fa-solid fa-check'></i></td>";
+            break;
         }
         echo "</tr>";
     }
