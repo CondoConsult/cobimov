@@ -12,8 +12,19 @@
       <label for="valor">Valor</label><br>
       <input type="number" name="valor" min="0" step="0.01" placeholder="0.00" required><br>
 
-      <label for="descricao">Descrição</label><br>
-      <input type="text" name="descricao" required>
+     <?php 
+
+     $query = "SELECT * FROM ClassesContas WHERE CodigoClasse BETWEEN '92.01' AND '92.99' ORDER BY CodigoClasse ASC";
+     $results = selectData($query);
+     
+     echo '<label>Classe</label><br> 
+           <select name="classe" required>';  
+     foreach ($results as $row) {
+        $classe = $row['CodigoClasse'] . " " . $row['NomeClasse'];
+        echo "<option value='" . $classe . "'>" . $classe . "</option>"; 
+     }
+     echo '</select>'
+     ?>
 
       <div class="buttons-container">
         <button class="btn primary" name="button" value="insert">Solicitar</button>

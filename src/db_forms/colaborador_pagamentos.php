@@ -26,7 +26,7 @@
             $chavePix = $_POST['chave-pix'];
             $valor = $_POST['valor'];
             $solicitante = $_POST['solicitante'];
-            $descricao = $_POST['descricao'];
+            $descricao = $_POST['classe'];
             
             $query = 'INSERT INTO colaborador_pagamentos (chave_pix, descricao, valor, solicitante)
                       VALUES (:chavepix, :descricao, :valor, :solicitante);';

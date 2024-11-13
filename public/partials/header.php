@@ -6,6 +6,7 @@ isUserLogged();
 
 $userID = $_SESSION['user_id'];
 $username = $_SESSION['user_username'];
+$accountType = $_SESSION['account_type'];
 
 include '../src/db_functions/select.php';
 
@@ -34,7 +35,7 @@ $tema = $results[0]['Tema'];
 
   <nav class="navbar">  
       <div class="nav-links">
-        <?php echo "<div class='profile'><i class='fa-regular fa-user'></i> Ola, ". $username . "</div>" ?>
+        <?php echo "<div class='profile'><i class='fa-regular fa-user'></i> Olá, ". $username . "</div>" ?>
         <a class="navbar-button" href="../pages/home.php"><img class="navbar-icon" src="../public/images/icons/home.svg"></a>
         <a class="navbar-button" href="../pages/configuracoes.php"><img class="navbar-icon" src="../public/images/icons/settings.svg"></a>
         <a class="navbar-button" href="../includes/logout.php"><img class="navbar-icon" src="../public/images/icons/log-out.svg"></a>
