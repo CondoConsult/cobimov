@@ -31,7 +31,9 @@ include_once '../src/db_functions/select.php';
             <table class='tables'>
               <tr>
                 <th>Data</th> 
-                <th>Descrição</th>
+                <th>Classe</th>
+                <th>Metodo Pagamento</th>
+                <th>Boleto/Pix</th>
                 <th>Valor</th>
                 <th>Status</th>
                 <th></th>
@@ -40,6 +42,8 @@ include_once '../src/db_functions/select.php';
     foreach ($results as $row) {
         $dataSolicitacao = date('d/m/Y', strtotime(htmlspecialchars($row['data_solicitacao'])));
         $descricao = htmlspecialchars($row['descricao']);
+        $metodoPagamento = htmlspecialchars($row['metodo_pagamento']);
+        $pixBoleto = htmlspecialchars($row['chave_pix_boleto']);
         $valor = htmlspecialchars($row['valor']);
         $statusPagamento = htmlspecialchars($row['status_pagamento']);
         $pagamentoID = htmlspecialchars($row['pagamento_id']);
@@ -47,6 +51,8 @@ include_once '../src/db_functions/select.php';
         echo "<tr>";
         echo "<td>" . $dataSolicitacao . "</td>";
         echo "<td>" . $descricao . "</td>";
+        echo "<td>" . $metodoPagamento . "</td>";
+        echo "<td>" . $pixBoleto . "</td>";
         echo "<td>" . $valor . "</td>";
 
         switch ($statusPagamento) {

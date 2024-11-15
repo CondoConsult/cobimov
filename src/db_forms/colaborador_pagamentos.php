@@ -23,16 +23,18 @@
     function insert($pdo) {
         try {
 
-            $chavePix = $_POST['chave-pix'];
+            $chavePix = $_POST['chave-pix-boleto'];
             $valor = $_POST['valor'];
             $solicitante = $_POST['solicitante'];
+            $metodoPagamento = $_POST['metodo-pagamento'] . " " . $_POST['tipo-chave'];
             $descricao = $_POST['classe'];
             
-            $query = 'INSERT INTO colaborador_pagamentos (chave_pix, descricao, valor, solicitante)
-                      VALUES (:chavepix, :descricao, :valor, :solicitante);';
+            $query = 'INSERT INTO colaborador_pagamentos (chave_pix_boleto, metodo_pagamento, descricao, valor, solicitante)
+                      VALUES (:chavepixboleto, :metodopagamento, :descricao, :valor, :solicitante);';
 
             $stmt = $pdo->prepare($query);
-            $stmt->bindParam(':chavepix', $chavePix);
+            $stmt->bindParam(':chavepixboleto', $chavePix);
+            $stmt->bindParam(':metodopagamento', $metodoPagamento);
             $stmt->bindParam(':descricao', $descricao);
             $stmt->bindParam(':valor', $valor);
             $stmt->bindParam(':solicitante', $solicitante);
