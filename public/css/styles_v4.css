@@ -51,7 +51,8 @@ button:hover {
 .wrapper {
     margin: 0 auto;
     width: 75%;
-    padding: 10% 0% 3% 0%;
+    padding: 10% 0% 1% 0%;
+    min-height: 580px;
 }
 
 .pagination {
@@ -230,9 +231,10 @@ button:hover {
 /* Buttons section */
 
 .buttons-container {
-    margin: 20px 0px 20px 0px;
-    display: inline-block;
-    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    width: 75%;
 }
 
 .btn {
@@ -245,6 +247,7 @@ button:hover {
 
 .primary {
     background-color: #941F25;
+    margin-right: 30px;
 }
 
 .remove {
@@ -507,4 +510,34 @@ input.input-linha-digitavel {
     100% {
         left: calc(11% - 11%);
     }
+}
+
+/* Modals */
+.modal-window {
+    display: none;
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+    z-index: 1000;
+    min-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.modal-content {
+    padding: 10px;
+}
+
+.close {
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
 }

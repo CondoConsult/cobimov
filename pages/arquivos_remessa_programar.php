@@ -88,13 +88,14 @@ if ($currentDay > 20) {
 
   ?>
 
-    <div class="buttons-container">
-      <a href="arquivos_remessa_programar_novo"><button class="btn primary">Programar</button></a>
-      <a href="arquivos_remessa_consultar"><button class="btn primary" type="button">Consultar</button></a>
-      <a href="arquivos_remessa"><button class="btn secondary" type="button">Voltar</button></a>
-    </div>
-
   </div>
+
+  <div class="buttons-container">
+    <a href="arquivos_remessa_programar_novo"><button class="btn primary">Programar</button></a>
+    <a href="arquivos_remessa_consultar"><button class="btn primary" type="button">Consultar</button></a>
+    <a href="arquivos_remessa"><button class="btn secondary" type="button">Voltar</button></a>
+  </div>
+
 
 </body>
 </html>

@@ -21,5 +21,9 @@ $userID = $_SESSION['user_id'];
       </form>
     </div>
 
+    <div class="buttons-container">
+      <a href="configuracoes"><button class="btn secondary" type="button">Voltar</button></a>
+    </div>
+
   </body>
 </html>

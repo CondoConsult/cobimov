@@ -72,13 +72,15 @@
 
           </div>
 
+          </div>
+
         <div class="buttons-container">
           <button class="btn primary" name="button" value="insert" type="submit">Cadastrar</button>
         <?php } ?>
           <a href="custasJudiciais.php"><button class="btn secondary" type="button">Voltar</button></a>
         </div>
       </form>
-    </div>
+
   </main>
 
   <script src="../js/inputFields.js"></script>

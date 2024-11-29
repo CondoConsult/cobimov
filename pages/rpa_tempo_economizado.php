@@ -227,10 +227,11 @@
         </div>
     </div>
 
+</div>
+
     <div class="buttons-container">
         <a href="rpa_relatorios"><button class="btn secondary" type="button">Voltar</button></a>
     </div>
-</div>
 
 </body>
 </html>

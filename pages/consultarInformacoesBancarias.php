@@ -68,11 +68,13 @@
     }
     ?>
 
+</div>
+
     <div class="buttons-container">
       <a href="cadastrarInformacoesBancarias.php"><button class="btn primary" type="button">Novo</button></a>
       <a href="condominios.php"><button class="btn secondary" type="button">Voltar</button></a>
     </div>
-  </div>
+
 </main>
 
 <script src="../js/cadastrarInformacoesBancarias.js"></script>

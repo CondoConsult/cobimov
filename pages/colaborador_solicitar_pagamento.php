@@ -3,22 +3,17 @@
   <div class="wrapper">
     <h1>Solicitar Pagamento</h1>
 
-    <form action="../src/db_forms/colaborador_pagamentos.php" method="POST">
+    <form action="../src/db_forms/colaborador_pagamentos.php" method="POST" enctype="multipart/form-data">
 
       <input type="text" value='<?php echo $username?>' name="solicitante" hidden>
 
       <label>Forma de pagamento</label><br>
       <select name="metodo-pagamento" id="metodo-pagamento">
         <option value="Boleto">Boleto</option>
-        <option value="Pix">Pix</option>
-      </select><br>
-
-      <label>Tipo de chave</label><br>
-      <select name="tipo-chave">
-        <option value="CPF/CNPJ">CPF/CNPJ</option>
-        <option value="Celular">Celular</option>
-        <option value="E-mail">E-mail</option>
-        <option value="Chave">Chave</option>
+        <option value="Pix CPF/CNPJ">Pix CPF/CNPJ</option>
+        <option value="Pix Celular">Pix Celular</option>
+        <option value="Pix E-mail">Pix E-mail</option>
+        <option value="Pix Chave aleatória">Pix Chave aleatória</option>
       </select><br>
 
       <label for="pix" id="metodo-pagamento-label">Boleto</label><br>
@@ -41,8 +36,13 @@
      echo '</select><br>'
      ?>
 
-     <label>Anexar documento</label><br>
-     <input type="file" name=''>
+     <label>Descrição</label><br>
+     <textarea name="descricao"></textarea><br> 
+
+     <label>Comprovante (.pdf, .jpg, .jpeg, png)</label><br>
+     <input type="file" name='file'>
+
+     </div>
 
       <div class="buttons-container">
         <button class="btn primary" name="button" value="insert">Solicitar</button>
@@ -50,20 +50,18 @@
       </div>
 
     </form>
-  </div>
 
 
 <script>
-
   const paymentMethodSelect = document.getElementById("metodo-pagamento");
   const paymentLabel = document.getElementById("metodo-pagamento-label");
 
   function updateLabel() {
     const selectedMethod = paymentMethodSelect.value;
-    if (selectedMethod === "Pix") {
+    if (selectedMethod.includes("Pix")) {
       paymentLabel.textContent = "Chave Pix";
     } else {
-      paymentLabel.textContent = "Boleto"; 
+      paymentLabel.textContent = "Linha digitável"; 
     }
   }
 

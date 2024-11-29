@@ -21,11 +21,12 @@
 
         <h3>Assistidas</h3>
         <p>Senha: CC@rpa</p>
+    
+    </div>
 
         <div class="buttons-container">
          <a href="home.php"><button class="btn secondary" type="button">Voltar</button></a>
         </div>
-    </div>
 
   </body>
 </html>

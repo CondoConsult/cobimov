@@ -21,11 +21,13 @@
                 <input name="alterado-para" type="text" required>
             </div>
         </div>
+
+        </div>
           <div class="buttons-container">
              <button name="button" value="insert" class="btn primary" type="submit">Cadastrar</button>
              <a href="condominios.php"><button class="btn secondary" type="button">Voltar</button></a>
           </form>
-        </div>
+
 
   </div>
 

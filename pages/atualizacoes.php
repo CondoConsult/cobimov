@@ -9,7 +9,7 @@ function displayUpdates($updates) {
     foreach ($updates as $row) {
         $updateName = htmlspecialchars($row['Titulo']);
         $description = htmlspecialchars($row['Descricao']);
-        $updateDate = htmlspecialchars($row['CadastradoEm']);
+        $updateDate = $dataSolicitacao = date('d/m/Y', strtotime(htmlspecialchars($row['CadastradoEm'])));
         echo "<h2>" . $updateName . "</h2>";
         echo "<p>" . $description . "</p>";
         echo "<small>" . $updateDate . "</small><hr>";
@@ -26,10 +26,11 @@ function displayUpdates($updates) {
         </div>
     </div>
 
+</div>
+
     <div class="buttons-container">
         <a href="home.php"><button class="btn secondary" type="button">Voltar</button></a>
     </div>
-</div>
 
 </body>
 </html>

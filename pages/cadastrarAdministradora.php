@@ -51,13 +51,15 @@
           </div>
         </div>
 
+        </div>
+
         <div class="buttons-container">
           <button class="btn primary" type="submit">Cadastrar</button>
           <button class="btn remove" type="reset">Limpar</button>
           <a href="administradoras.php"><button class="btn secondary" type="button">Voltar</button></a>
         </div>
       </form>
-    </div>
+
   </main>
   <script src="../js/camposAdicionais.js"></script>
   <script src="../js/cadastrarAdministradora.js"></script>

@@ -110,12 +110,12 @@
         }
         echo "</table></div>";
         ?>
+    </div>
 
         <div class="buttons-container">
             <a href="arquivos_remessa_programar"><button class="btn primary" type="button">Programar</button></a>
             <a href="arquivos_remessa"><button class="btn secondary" type="button">Voltar</button></a>
         </div>
-    </div>
 
     <script src="../js/main.js"></script>
 </body>

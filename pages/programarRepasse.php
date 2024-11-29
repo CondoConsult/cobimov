@@ -63,8 +63,14 @@
             <option value="Retroativos">Retroativos</option>
             <option value="Click Consult">Click Consult</option>
           </select>
+
+          </div>
+          </div>
+
           <div class="attention-container">
             <p>Atenção! Repasses só podem ser cadastrados em contas principais.</p>
+          </div>
+
           </div>
           <div class="buttons-container">
             <button class="btn primary" type="submit" name="button" value="insert">Cadastrar</button>
@@ -72,9 +78,9 @@
           </div>
         </form>
 
-      </div>
-    </div>
-  </div>
+
+
+
 
   <?php
       } elseif ($bloquearRepasse == 'Sim') {

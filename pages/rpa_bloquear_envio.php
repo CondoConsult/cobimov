@@ -11,7 +11,7 @@ $result = selectData($query);
 
 <div class="wrapper">
     <h1>Bloquear Envio Avisos WhatsApp</h1>
-    <p>Informe o numero ou cliente que deseja remover da lista de envio de mensagens.</p>
+    <p>Informe o número ou cliente que deseja remover da lista de envio de mensagens.</p>
 
     <form action="../src/db_forms/avisos_whatsapp.php" method="POST">
         <label>Telefone</label><br>
@@ -27,7 +27,7 @@ $result = selectData($query);
             <tr>
                 <th>Telefone</th>
                 <th>Nome Contato</th>
-                <th>Condominio</th>
+                <th>Condomínio</th>
                 <th></th>
             </tr>
 
@@ -58,11 +58,13 @@ $result = selectData($query);
     </table>
     </div>
 
+    </div>
+
     <div class="buttons-container">
         <a href="rpa_avisos_whatsapp.php">
             <button class="btn secondary" type="button">Voltar</button>
         </a>
     </div>
-</div>
+
 </body>
 </html>

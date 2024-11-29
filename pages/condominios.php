@@ -28,10 +28,11 @@
         <a class="menu-box" href="ultimosCadastros.php"><i class="fa-solid fa-magnifying-glass"></i> Consultar</a>
       </div>
 
+      </div>
+
       <div class="buttons-container">
         <a href="home.php"><button class="btn secondary" type="button">Voltar</button></a>
       </div>
-    </div>
 
   </body>
 </html>

@@ -32,9 +32,9 @@ ini_set('display_errors', 1);
             <div id="pix">
               <label>Tipo de chave</label><br>
               <select name="tipo-chave">
-                <option value="E-mail">E-mail</option>
+                <option value="CPF/CNPJ">CPF/CNPJ</option>
                 <option value="Celular">Celular</option>
-                <option value="CNPJ">CNPJ</option>
+                <option value="E-mail">E-mail</option>
                 <option value="Chave">Chave</option>
               </select><br>
               <label>Chave</label><br>

@@ -88,11 +88,13 @@
     }
     ?>
 
+</div>
+
     <div class="buttons-container">
         <a href="lancarCustasJudiciais.php"><button class="btn primary" type="button" >Novo</button></a>
         <a href="custasJudiciais.php"><button class="btn secondary" type="button">Voltar</button></a>
     </div>
-</div>
+
 
 </body>
 </html>

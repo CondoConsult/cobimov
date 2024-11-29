@@ -13,10 +13,11 @@
   <div class="conatiners">
     <a class="menu-box" href="numero_boletos"><i class="fa-solid fa-magnifying-glass"></i>Consultar</a>
   </div>
+
+</div>
   
-  <div class="buttons-container">
-    <a href="home"><button class="btn secondary" type="button">Voltar</button></a>
-  </div>
+<div class="buttons-container">
+  <a href="home"><button class="btn secondary" type="button">Voltar</button></a>
 </div>
 
 </body>

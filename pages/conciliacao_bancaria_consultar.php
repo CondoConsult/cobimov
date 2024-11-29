@@ -73,10 +73,12 @@
     echo "</table></div>";
     ?>
 
+</div>
+
     <div class="buttons-container">
         <a href="repasses.php"><button class="btn secondary" type="button">Voltar</button></a>
     </div>
-</div>
+
 
 <script src="../js/main.js"></script>
 </body>

@@ -23,27 +23,35 @@
     function insert($pdo) {
         try {
 
+            if (isset($_FILES['file']) && $_FILES['file']['error'] !== UPLOAD_ERR_NO_FILE) {
+                require_once 'upload_file.php';
+                $fileNameNew = uploadFile(); // Get the file name returned by the function
+            } 
+
             $chavePix = $_POST['chave-pix-boleto'];
             $valor = $_POST['valor'];
             $solicitante = $_POST['solicitante'];
-            $metodoPagamento = $_POST['metodo-pagamento'] . " " . $_POST['tipo-chave'];
-            $descricao = $_POST['classe'];
+            $metodoPagamento = $_POST['metodo-pagamento'];
+            $classe = $_POST['classe'];
+            $descricao = $_POST['descricao'];
             
-            $query = 'INSERT INTO colaborador_pagamentos (chave_pix_boleto, metodo_pagamento, descricao, valor, solicitante)
-                      VALUES (:chavepixboleto, :metodopagamento, :descricao, :valor, :solicitante);';
+            $query = 'INSERT INTO colaborador_pagamentos (chave_pix_boleto, metodo_pagamento, classe, descricao, valor, solicitante, anexo)
+                      VALUES (:chavepixboleto, :metodopagamento, :classe, :descricao, :valor, :solicitante, :anexo);';
 
             $stmt = $pdo->prepare($query);
             $stmt->bindParam(':chavepixboleto', $chavePix);
             $stmt->bindParam(':metodopagamento', $metodoPagamento);
+            $stmt->bindParam(':classe', $classe);
             $stmt->bindParam(':descricao', $descricao);
             $stmt->bindParam(':valor', $valor);
             $stmt->bindParam(':solicitante', $solicitante);
+            $stmt->bindParam(':anexo', $fileNameNew);
 
             if (!$stmt->execute()) {
                 echo "error";
             }
 
-            header('Location: ../../pages/colaborador_consultar_pagamentos');
+            header('Location: ../../pages/colaborador_pagamentos');
             $pdo = null;
             $stmt = null;
             die();
@@ -68,7 +76,7 @@
                 echo "error";
             }
 
-            header('Location: ../../pages/colaborador_consultar_pagamentos');
+            header('Location: ../../pages/colaborador_pagamentos');
             $pdo = null;
             $stmt = null;
             die();
@@ -101,7 +109,7 @@
                 echo "error";
             }
 
-            header('Location: ../../pages/colaborador_gerenciar_pagamentos');
+            header('Location: ../../pages/colaborador_pagamentos');
             $pdo = null;
             $stmt = null;
             die();

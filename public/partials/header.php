@@ -17,7 +17,7 @@ $tema = $results[0]['Tema'];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +42,7 @@ $tema = $results[0]['Tema'];
     </div>
   </nav>
 
-  <button class="side-bar-button"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></button>
+  <!-- <button class="side-bar-button"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></button> -->
 
   <div class="side-bar">
     <div class="side-bar-links">
@@ -63,5 +63,6 @@ $tema = $results[0]['Tema'];
       <a href="rpa_relatorios">Relatórios</a>
     </div>
   </div>
+
 
   <script src="../js/navbar.js"></script>

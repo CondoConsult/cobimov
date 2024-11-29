@@ -41,9 +41,9 @@
 
       <h3>Usuários</h3>
       <div class="containers">
-        <a class= "menu-box" href="usuarios_cadastrar.php"><i class="fa-solid fa-plus"></i> Cadastrar</a>
-        <a class="menu-box" href="usuarios.php"><i class="fa-solid fa-pen-to-square"></i> Gerenciar</a>
-        <a class="menu-box" target="blank_()" href="user_access_levels.html">Niveis de Acesso</a>
+        <a class= "menu-box" href="usuarios_cadastrar"><i class="fa-solid fa-plus"></i> Cadastrar</a>
+        <a class="menu-box" href="usuarios"><i class="fa-solid fa-pen-to-square"></i> Gerenciar</a>
+        <a class="menu-box" target="blank_()" href="user_access_levels"><i class="fa-solid fa-key"></i> Niveis de Acesso</a>
       </div>
       <p>Apenas usuarios com perfil administrador tem acesso ao gerenciamento de usuarios.</p>
 

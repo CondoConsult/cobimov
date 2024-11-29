@@ -89,11 +89,13 @@
     }
   ?>
 
+</div>
+
     <div class="buttons-container">
       <a href="programarRepasse.php"><button type="button" class="btn primary">Novo</button></a>
       <a href="repasses.php"><button class="btn secondary" type="button">Voltar</button></a>
     </div>
-  </div>
+
 
 </body>
 </html>

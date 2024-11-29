@@ -140,10 +140,11 @@
                         echo "</div>";
                     }
             ?>
+            </div>
             <div class="buttons-container">
                 <a href="condominios.php"><button class="btn secondary" type="button">Voltar</button></a>
             </div>
-        </div>
+        
     </main>
 </body>
 <script src="../js/main.js"></script>

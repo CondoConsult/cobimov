@@ -11,10 +11,11 @@
         <div class="containers">
           <a class="menu-box" href="conciliacao_bancaria_consultar.php"><i class="fa-solid fa-magnifying-glass"></i> Consultar</a>
         </div>
-        <div class="buttons-container">
-          <a href="home.php"><button class="btn secondary" type="button">Voltar</button></a>
-        </div>
-    </div>
+      </div>
+        
+      <div class="buttons-container">
+        <a href="home.php"><button class="btn secondary" type="button">Voltar</button></a>
+      </div>
 
   </body>
 </html>

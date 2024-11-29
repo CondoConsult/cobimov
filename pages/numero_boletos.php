@@ -76,10 +76,11 @@
               </form>";
         ?>
 
-    </div>
+    </div></div>
 
     <div class="buttons-container">
         <a href="arquivos_remessa.php"><button class="btn secondary" type="button">Voltar</button></a>  
     </div>
+
 </body>
 </html>

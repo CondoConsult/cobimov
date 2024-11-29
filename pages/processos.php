@@ -49,7 +49,7 @@
     echo "<table class='tables'>"
           . "<tr>"
           . "<th>Condomínio</th>"
-          . "<th>Upload Remessa BB</th>"
+          . "<th>Carregamento Remessa</th>"
           . "<th>Rel. Receber por Unidade</th>"
           . "<th>Envio Comunicado</th>"
           . "<th>Boleto Segunda Via</th>"
@@ -164,10 +164,12 @@
     }
     ?>
 
+  </div></div>
+
     <div class="buttons-container">
       <a href="home.php"><button class="btn secondary" type="button">Voltar</button></a>
     </div>
-  </div>
+
 
   <script src="../js/main.js"></script>
 

@@ -16,16 +16,11 @@
     }
     echo "</form>";
     ?>
-    
-    <div class="containers">
-        <div class="box"></div>
+
+</div>
+</div>
         <div class="buttons-container">
             <a href="configuracoes.php"><button class="btn secondary" type="button">Voltar</button></a>
         </div>
-    </div>
-</div>
 
 </body>
-
-
-
