@@ -63,7 +63,6 @@ include_once '../src/db_functions/select.php';
             <table class='tables'>
               <tr>
                 <th>Data</th> 
-                <th>Descrição</th>
                 <th>Metodo Pagamento</th>
                 <th>Valor</th>
                 <th>Solicitante</th>
@@ -85,7 +84,6 @@ include_once '../src/db_functions/select.php';
               
                   echo "<tr>";
                   echo "<td>" . $dataSolicitacao . "</td>";
-                  echo "<td>" . $descricao . "</td>";
                   echo "<td>" . $metodoPagamento . "</td>";
                   echo "<td>R$ " . number_format($valor, 2, ',', '.') . "</td>";
                   echo "<td>" . $solicitante . "</td>";
@@ -123,7 +121,7 @@ include_once '../src/db_functions/select.php';
                   echo "<p><strong>Solicitante:</strong> " . $solicitante . "</p>";
                   echo "<p><strong>Metodo de Pagamento:</strong> " . $metodoPagamento . " - " .  $pixBoleto . "</p>";
                   if ($anexo) {
-                      echo "<p><a target='_blank' href='../uploads/" . $anexo . "'>Visualizar Anexo</a></p>";
+                      echo "<p><a target='_blank' href='../uploads/" . $anexo . "'><i class='fa-solid fa-paperclip fa-xl'></i></a></p>";
                   }
 
                   if ($statusPagamento === 'pendente') {
@@ -131,6 +129,7 @@ include_once '../src/db_functions/select.php';
                       echo "<form action='../src/db_forms/colaborador_pagamentos' method='POST'>
                               <input value='" . $pagamentoID . "' name='pagamento-id' hidden>
                               <button name='button' class='btn primary' value='approve'>Aprovar</button>
+                              <button name='button' class='btn primary' value='paid'>Pago Manualmente</button>
                               <button name='button' class='btn primary' value='deny'>Rejeitar</button>
                             </form>";
                     } else {

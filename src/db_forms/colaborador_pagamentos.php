@@ -9,6 +9,7 @@
                 insert($pdo);
                 break;
             case 'approve':
+            case 'paid':
             case 'deny':
                 update($pdo, $button);
                 break;
@@ -95,6 +96,8 @@
                 $statuspagamento = 'aprovado';
             } elseif ($button == 'deny') {
                 $statuspagamento = 'negado';
+            } elseif ($button == 'paid') {
+                $statuspagamento = 'pago';
             }
             
             $query = 'UPDATE colaborador_pagamentos

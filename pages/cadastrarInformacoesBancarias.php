@@ -35,7 +35,7 @@ ini_set('display_errors', 1);
                 <option value="CPF/CNPJ">CPF/CNPJ</option>
                 <option value="Celular">Celular</option>
                 <option value="E-mail">E-mail</option>
-                <option value="Chave">Chave</option>
+                <option value="Chave aleatória">Chave aleatória</option>
               </select><br>
               <label>Chave</label><br>
               <input type="text" name="chave-pix">
