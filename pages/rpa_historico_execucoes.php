@@ -7,7 +7,14 @@
 
         require_once '../src/db_functions/select.php';
 
-        $query = "SELECT DISTINCT(processo) FROM rpa_historico_execucoes ORDER BY processo ASC;";
+        if ($accountType === 'APS' ) {
+            $client = 'APS';
+        } else {
+            $client = 'Condo Consult';
+        }
+
+        $query = "SELECT DISTINCT(processo) FROM rpa_historico_execucoes 
+                  WHERE cliente = '$client' ORDER BY processo ASC;";
         $processos = selectData($query); ?>
 
         <form method="POST">
@@ -28,6 +35,7 @@
 
         $query = "SELECT * FROM rpa_historico_execucoes
                   WHERE (processo = '$processo' OR '$processo' IS NULL OR '$processo' = '')
+                  AND cliente = '$client' 
                   ORDER BY id_execucao DESC LIMIT 100;";
         $results = selectData($query);
 

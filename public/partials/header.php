@@ -31,14 +31,14 @@ $tema = $results[0]['Tema'];
 </head>
 <body>
 
-  <a class="home-link" href="../pages/home.php">CobImov</a>
+  <a class="home-link" href="../pages/home">CobImov</a>
 
   <nav class="navbar">  
       <div class="nav-links">
         <?php echo "<div class='profile'><i class='fa-regular fa-user'></i> Olá, ". $username . "</div>" ?>
-        <a class="navbar-button" href="../pages/home.php"><img class="navbar-icon" src="../public/images/icons/home.svg"></a>
-        <a class="navbar-button" href="../pages/configuracoes.php"><img class="navbar-icon" src="../public/images/icons/settings.svg"></a>
-        <a class="navbar-button" href="../includes/logout.php"><img class="navbar-icon" src="../public/images/icons/log-out.svg"></a>
+        <a class="navbar-button" href="../pages/home"><img class="navbar-icon" src="../public/images/icons/home.svg"></a>
+        <a class="navbar-button" href="../pages/configuracoes"><img class="navbar-icon" src="../public/images/icons/settings.svg"></a>
+        <a class="navbar-button" href="../includes/logout"><img class="navbar-icon" src="../public/images/icons/log-out.svg"></a>
     </div>
   </nav>
 
