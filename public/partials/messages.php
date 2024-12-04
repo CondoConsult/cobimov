@@ -1,11 +1,8 @@
 <style>
-    body {
-        background-color: #1a1a1a;
-        color: #cfcfcf;
-    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;800&display=swap');
 
     .message-container {
-        background-color: #292929;
         padding: 30px;
         border-radius: 20px;
         width: 300px;
@@ -15,11 +12,16 @@
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+        font-family: 'Maven Pro', sans-serif;
+        background-color: #f4f4f4;
     }
 
     a {
-        color: #941F25; 
+        color: #fff; 
         text-decoration: none;
+        background-color: #941F25;
+        padding: 10px;
+        border-radius: 10px;
     }
 </style>
 

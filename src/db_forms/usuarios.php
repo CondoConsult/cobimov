@@ -35,6 +35,7 @@ function delete($pdo) {
         } else {
             echo "Error: Unable to execute query.";
         }
+
     } catch (PDOException $error) {
         die('Query failed' . $error->getMessage());
     }

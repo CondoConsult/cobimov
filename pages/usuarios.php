@@ -6,15 +6,15 @@
     <?php
     include_once '../src/db_functions/select.php';
 
-    $query = "SELECT * FROM Usuarios";
+    $query = "SELECT * FROM Usuarios ORDER BY Usuario ASC;";
     $results = selectData($query);
 
-    echo "<form action='../src/db_forms/usuarios.php' method='POST'>";
     foreach ($results as $row) {
-      echo "<input name='user-id' value='" .  $row['UsuarioID'] . "' hidden>";
+      echo "<form action='../src/db_forms/usuarios.php' method='POST'>";
+      echo "<input type='hidden' name='user-id' value='" .  $row['UsuarioID'] . "'>";
       echo "<p><button value='delete' class='btn remove' name='button'>Remover</button> " . $row['Usuario'] . " - " . $row['Permissoes'] . "</p>";
+      echo "</form>";
     }
-    echo "</form>";
     ?>
 
 </div>
