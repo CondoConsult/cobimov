@@ -10,18 +10,14 @@
     $query = "SELECT DISTINCT(MesReferencia) FROM ArquivosRemessa WHERE MesReferencia LIKE '%$currentYear';";
     $months = selectData($query);
 
-    echo "<form method='POST' id='filtrar'>
-        <label>Mês</label>
-        <select name='mes-referencia' onchange='filtrar()'>
-        <option value='' selected>Selecione...</option>";
-        foreach ($months as $row) {
-            $monthYear = $row['MesReferencia'];
-            echo "<option value='". $monthYear ."'>" . $monthYear . "</option>";
-        }
-        echo "</select></form>";
+    echo "<form method='POST' id='filtrar' onchange='filtrar()'>
+            <label>Mês</label>
+            <input type='month' name='mes-referencia'>
+        </form>";
 
         if (isset($_POST['mes-referencia'])) {
-            $mesReferencia = $_POST['mes-referencia'];
+            $date = new DateTime($_POST['mes-referencia']);  // Create a DateTime object
+            $mesReferencia = $date->format('m/Y');  // Format the date as MM/YYYY
         } else {
             
             $currentDay = date('d');

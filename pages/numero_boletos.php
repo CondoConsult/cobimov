@@ -4,25 +4,15 @@
         <h1>Número de Boletos</h1>
 
         <form method="POST">
-            <label>Mês de Referência</label><br>
-            <select name="mes-referencia">
-                <option value="03/2024">03/2024</option>
-                <option value="04/2024">04/2024</option>
-                <option value="05/2024">05/2024</option>
-                <option value="06/2024">06/2024</option>
-                <option value="07/2024">07/2024</option>
-                <option value="08/2024">08/2024</option>
-                <option value="09/2024">09/2024</option>
-                <option value="10/2024">10/2024</option>
-                <option value="11/2024">11/2024</option>
-                <option value="12/2024">12/2024</option>
-            </select>
+            <label>Mês</label>
+            <input type='month' name='mes-referencia'>
             <button class="btn filter">Filtrar</button>
         </form>
 
         <?php
 
-        $mesReferencia = $_POST['mes-referencia'];
+        $date = new DateTime($_POST['mes-referencia']);  // Create a DateTime object
+        $mesReferencia = $date->format('m/Y');  // Format the date as MM/YYYY
 
         if (!isset($mesReferencia)) {
             $currentDay = date('d');
