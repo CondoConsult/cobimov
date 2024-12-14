@@ -9,7 +9,11 @@
       <h3>Info. Bancárias</h3>
       <div class="containers">
         <a class="menu-box" href="consultarInformacoesBancarias.php"><i class="fa-solid fa-magnifying-glass"></i> Consultar</a>
-        <a class="menu-box" href="cadastrarInformacoesBancarias.php"><i class="fa-solid fa-plus"></i> Cadastrar</a>
+        <?php 
+          if ($accountType === 'admin') { ?>
+            <a class="menu-box" href="cadastrarInformacoesBancarias.php"><i class="fa-solid fa-plus"></i> Cadastrar</a>
+        <?php } ?>
+
       </div> 
 
       <h3>Índices de Correção</h3>

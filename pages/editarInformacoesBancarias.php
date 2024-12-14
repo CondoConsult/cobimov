@@ -68,7 +68,7 @@
                 <option value="E-mail" <?php echo (trim($tipoChave) === 'E-mail') ? 'selected' : ''; ?>>E-mail</option>
                 <option value="Celular" <?php echo (trim($tipoChave) === 'Celular') ? 'selected' : ''; ?>>Celular</option>
                 <option value="CNPJ" <?php echo (trim($tipoChave) === 'CNPJ') ? 'selected' : ''; ?>>CNPJ</option>
-                <option value="Chave" <?php echo (trim($tipoChave) === 'Chave') ? 'selected' : ''; ?>>Chave</option>
+                <option value="Chave aleatória" <?php echo (trim($tipoChave) === 'Chave') ? 'selected' : ''; ?>>Chave aleatória</option>
               </select><br>
               <label>Chave</label><br>
               <input type="chave" name="chave-pix" value="<?php echo $chavePix ?>">

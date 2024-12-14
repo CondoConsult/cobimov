@@ -25,15 +25,13 @@
 
             echo "<div class='container'>";
             echo "<div class='container-details'>";
-            ?> 
             
-            <form action="editarInformacoesBancarias.php" method="POST">
-              <button class="button-edit" name="edit" value="<?php echo $infoID; ?>"><img class='processes-status-icons' src='../public/images/icons/edit.svg'></button><br><br>
-            </form>
+            if ($accountType === 'admin') { ?>
+              <form action="editarInformacoesBancarias.php" method="POST">
+               <button class="button-edit" name="edit" value="<?php echo $infoID; ?>"><img class='processes-status-icons' src='../public/images/icons/edit.svg'></button><br><br>
+              </form>
+            <?php } 
             
-            <?php
-            
-           
             echo "<h2>" . $row['CondName'] . " - " . $row['MeioPagamento'] . "</h2>";
             if ($row['MeioPagamento'] == "TED/DOC") {
               echo "<p>" . $row['BancoNome'] . "</p>";
@@ -71,7 +69,10 @@
 </div>
 
     <div class="buttons-container">
+    <?php 
+    if ($accountType === 'admin') { ?>
       <a href="cadastrarInformacoesBancarias.php"><button class="btn primary" type="button">Novo</button></a>
+    <?php } ?>
       <a href="condominios.php"><button class="btn secondary" type="button">Voltar</button></a>
     </div>
 

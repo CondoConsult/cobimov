@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($errors) {
             $_SESSION["errors_signup"] = $errors;
-            header("Location: ../pages/cadastrarUsuario.php");
+            header("Location: ../pages/usuarios_cadastrar.php");
             die();
         }
 
